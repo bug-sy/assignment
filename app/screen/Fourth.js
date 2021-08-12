@@ -1,6 +1,5 @@
 import React from 'react';
 import { Text, View, Image, StyleSheet } from 'react-native';
-import { baseProps } from 'react-native-gesture-handler/lib/typescript/handlers/gestureHandlers';
 import CommonScreen from "../commonFunction/CommonScreen"
 
 const Fourth = (props) => {

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Text, View, Image, StyleSheet, TextInput, Icon, Dimensions } from 'react-native';
-import CommonScreen from "../commonFunction/CommonScreen"
 import { palette, typography } from '../commonFunction/sharedFunction';
 
 const HomeScreen = (props) => {
@@ -10,7 +9,7 @@ const HomeScreen = (props) => {
     const sectionOne = () => {
         return (
             <View>
-                <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20,top:-60 }}>
+                <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20, top: -60 }}>
                     <View>
                         <Text style={styles.text1}>Good Evening</Text>
                         <Text style={styles.text2}>Welcome back</Text>
@@ -25,12 +24,12 @@ const HomeScreen = (props) => {
                         />
                     </View>
                 </View>
-                <View style={{ paddingHorizontal: 20, width: Dimensions.get('window').width,top:-20 }}>
+                <View style={{ paddingHorizontal: 20, width: Dimensions.get('window').width, top: -20 }}>
                     <Image
                         style={{
                             bottom: "0.11%",
                             background: "#EDF2F9",
-width:"100%"
+                            width: "100%"
 
                         }}
                         source={(4 === 4) && require("../assets/Premiumbanner.png")}
@@ -40,7 +39,7 @@ width:"100%"
 
 
 
-                <View style={{ paddingHorizontal: 20, top :-15 }}>
+                <View style={{ paddingHorizontal: 20, top: -15 }}>
                     <View style={{ flexDirection: "row", backgroundColor: palette.white, justifyContent: "space-between", borderRadius: 20, padding: 10, marginTop: 10, }}>
                         <View>
                             <Image
@@ -134,7 +133,7 @@ width:"100%"
                     </View>
                 </View>
 
-                <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 10,paddingHorizontal:20 }}>
+                <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 10, paddingHorizontal: 20 }}>
                     <View><Text style={{ fontWeight: "700", fontSize: 20 }}>Folders</Text></View>
                     <View>
                         <Image
@@ -148,64 +147,64 @@ width:"100%"
 
                     </View>
                 </View>
-             
+
             </View>
         )
     }
-    const sectionTwo = () =>{
-return(<View style={{backgroundColor:"green"}}></View>)
+    const sectionTwo = () => {
+        return (<View style={{ backgroundColor: "green" }}></View>)
     }
 
-   const  bottomBar = () =>{
-        return(
-            <View style={{ height: 100, backgroundColor: palette.warmGrey, bottom: 0,position:"absolute", width: Dimensions.get('window').width, flexDirection: "row", justifyContent: "space-between" }}>
-            <View style={{ flexDirection: "row", padding: 20 }} onStartShouldSetResponder= { () =>{
-                setAppointments(0)
-                console.log("bye")
+    const bottomBar = () => {
+        return (
+            <View style={{ height: 100, backgroundColor: palette.warmGrey, bottom: 0, position: "absolute", width: Dimensions.get('window').width, flexDirection: "row", justifyContent: "space-between" }}>
+                <View style={{ flexDirection: "row", padding: 20 }} onStartShouldSetResponder={() => {
+                    setAppointments(0)
+                    console.log("bye")
 
-            }}>
-                <Image
-                    style={{
+                }}>
+                    <Image
+                        style={{
 
-                        height: 30, width: 30,
+                            height: 30, width: 30,
 
-                    }}
-                    source={(4 === 4) && require("../assets/stack.png")}
-                />
+                        }}
+                        source={(4 === 4) && require("../assets/stack.png")}
+                    />
 
+                </View>
+                <View style={{ padding: 20 }} >
+                    <Image
+                        style={{
+
+                            height: 55, width: 55,
+                            top: -40
+                        }}
+                        source={(4 === 4) && require("../assets/plus.png")}
+                    />
+                </View>
+                <View style={{ padding: 20 }}
+                    onStartShouldSetResponder={
+                        () => {
+                            setAppointments(1)
+                            console.log("hi")
+                        }
+                    }>
+                    <Image
+                        style={{
+
+                            height: 30, width: 30
+
+                        }}
+                        source={(4 === 4) && require("../assets/settings.png")}
+                    />
+                </View>
             </View>
-            <View style={{ padding: 20 }} >
-                <Image
-                    style={{
-
-                        height: 55, width: 55,
-                        top: -40
-                    }}
-                    source={(4 === 4) && require("../assets/plus.png")}
-                />
-            </View>
-            <View style={{ padding: 20 }}
-            onStartShouldSetResponder ={
-                () =>{
-                    setAppointments(1)
-                    console.log("hi")
-                }
-            }>
-                <Image
-                    style={{
-
-                        height: 30, width: 30
-
-                    }}
-                    source={(4 === 4) && require("../assets/settings.png")}
-                />
-            </View>
-        </View>
         )
     }
     return (
         <View style={styles.container}>
-            {section===0?sectionOne():sectionTwo()}
+            {section === 0 ? sectionOne() : sectionTwo()}
             {bottomBar()}
         </View>
     );
