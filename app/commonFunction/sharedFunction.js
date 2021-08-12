@@ -95,3 +95,22 @@ export const Customer = [
     successColor: '#15beaa',
     darkGrey: '#2E2F30',
   };
+
+
+  export const typography = {
+    /**
+     * The primary font.  Used in most places.
+     */
+    primary: 'Rubik-Regular',
+    /**
+     * An alternate font used for perhaps titles and stuff.
+     */
+    secondary: 'Rubik-Medium',
+    /**
+     * For TextField validation error
+     */
+    tertiary: 'Rubik-Bold',
+  
+    quaternary: 'Rubik-Light',
+    semibold:'Rubik-Semibold'
+  };
